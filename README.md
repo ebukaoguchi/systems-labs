@@ -30,3 +30,7 @@ It deliberately does **not** contain examination questions, assignment solutions
 ## Adopting these modules
 
 Instructors are welcome to adopt and remix modules with attribution. If you use one, a note about how it went — what worked, what broke — is the most valuable contribution you can make back; open an issue or get in touch via [my homepage](https://ebukaoguchi.github.io/).
+
+## License
+
+The materials in this repository are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) — see the `LICENSE` file. You are free to share and adapt them, with attribution.
