@@ -52,6 +52,16 @@ Students submit:
 - The completed truth tables for all three gates
 - A short written explanation of the observed behaviour
 
+## From the bench
+
+Instructor-built sample circuits for this lab — an MB102 supply module powering the breadboard, the output LED lit, and the 9V battery pack in frame that the instructor notes below warn about:
+
+![Sample circuit 1 — powered breadboard with the output LED lit](breadboard-sample-1.jpg)
+
+![Sample circuit 2 — a second sample build on a full-size breadboard](breadboard-sample-2.jpg)
+
+![Sample circuit 3 — sample build with the 9V battery pack in frame](breadboard-sample-3.jpg)
+
 ## Instructor notes
 
 - The 9V battery option works but drains quickly; a wall adapter per bench removes the most common mid-lab failure.
