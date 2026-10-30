@@ -43,12 +43,13 @@ By completing the capstone, students demonstrate that they can:
 
 ## Deliverables
 
-- Assembler source code (Python or C++ — student's choice, declared in the design note)
+- Assembler source code in C++ — the language of the pathway's first stage, whose file handling, strings, and maps are exactly the tools this project needs (a Python implementation is acceptable with the instructor's approval, declared in the design note)
 - A test suite: `.asm` inputs with their expected machine-code outputs
 - A one-page design note: the two-pass structure, the symbol table, and one encoding decision the student found genuinely tricky
 
 ## Instructor notes
 
+- The implementation language is deliberate. An assembler is a text-processing program, and C++ gives students the strings, maps, and file input they learned in SCIS 123. Writing the assembler in MIPS assembly itself (self-hosting) is a different and much larger project; at this level it would bury the encoding ideas under string handling.
 - Milestone 2's acceptance test deliberately reuses Lab 1's decoded word. Students recognise `0x01285020` — the capstone's first success is a callback to their first lab, and they feel the semester close its loop.
 - The branch-offset milestone is where the class's Week 8 and Week 13 knowledge collides: students who truly understood PC = PC + 4 find (target − (PC+4))/4 obvious; students who memorised it find the bug immediately. Either outcome is instructive.
 - QtSpim as oracle removes grading ambiguity: correctness is a diff, not an opinion. Reserve human grading for the design note.
