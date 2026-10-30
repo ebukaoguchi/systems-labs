@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 400" font-family="sans-serif">
+  <rect x="0" y="0" width="920" height="400" fill="#ffffff"/>
+  <text x="20" y="34" font-size="22" font-weight="bold" fill="#1a202c">Basic multiplier: shift and add</text>
+  <text x="20" y="58" font-size="14" fill="#4a5568">Three registers. The multiplier decides, one bit at a time, whether the multiplicand is added.</text>
+
+  <!-- registers -->
+  <g font-size="14">
+    <rect x="40" y="100" width="250" height="64" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="60" y="126" font-weight="bold" fill="#1a202c">Multiplicand register</text>
+    <text x="60" y="148" fill="#1a202c">shifts left each step</text>
+
+    <rect x="40" y="200" width="250" height="64" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="60" y="226" font-weight="bold" fill="#1a202c">Multiplier register</text>
+    <text x="60" y="248" fill="#1a202c">shifts right; stop at 0</text>
+
+    <rect x="600" y="100" width="280" height="64" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+    <text x="620" y="126" font-weight="bold" fill="#1a202c">Product register</text>
+    <text x="620" y="148" fill="#1a202c">starts at 0; twice as wide</text>
+  </g>
+
+  <!-- ALU -->
+  <rect x="370" y="100" width="150" height="64" fill="#fffaf0" stroke="#b7791f" stroke-width="2"/>
+  <text x="445" y="126" font-size="15" font-weight="bold" fill="#1a202c" text-anchor="middle">ALU (add)</text>
+  <text x="445" y="148" font-size="13" fill="#1a202c" text-anchor="middle">one addition</text>
+
+  <!-- arrows -->
+  <g stroke="#4a5568" stroke-width="2.5" fill="none">
+    <line x1="290" y1="132" x2="362" y2="132"/>
+    <line x1="520" y1="132" x2="592" y2="132"/>
+    <path d="M 740 164 L 740 300 L 445 300 L 445 172"/>
+    <path d="M 290 232 L 330 232 L 330 320 L 700 320"/>
+  </g>
+  <g fill="#4a5568">
+    <polygon points="362,126 374,132 362,138"/>
+    <polygon points="592,126 604,132 592,138"/>
+    <polygon points="439,172 445,160 451,172"/>
+  </g>
+  <text x="600" y="292" font-size="13" fill="#4a5568">product feeds back for the next addition</text>
+  <text x="470" y="312" font-size="13" fill="#c53030">LSB of multiplier goes to control</text>
+
+  <!-- control -->
+  <rect x="600" y="200" width="280" height="64" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+  <text x="620" y="226" font-size="14" font-weight="bold" fill="#1a202c">Control</text>
+  <text x="620" y="248" font-size="13.5" fill="#1a202c">if LSB = 1: enable the add</text>
+
+  <text x="40" y="330" font-size="14" fill="#1a202c">Loop, once per multiplier bit:</text>
+  <text x="40" y="354" font-size="14" fill="#1a202c">1. Test LSB &#8594; 2. Add if 1 &#8594; 3. Shift multiplicand left, multiplier right &#8594; 4. Repeat until multiplier = 0</text>
+  <text x="40" y="382" font-size="13.5" fill="#4a5568">Cost: about n cycles for an n-bit multiplier, with three registers and two shifting paths.</text>
+</svg>

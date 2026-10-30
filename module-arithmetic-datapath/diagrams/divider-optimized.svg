@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 410" font-family="sans-serif">
+  <rect x="0" y="0" width="920" height="410" fill="#ffffff"/>
+  <text x="20" y="34" font-size="22" font-weight="bold" fill="#1a202c">Optimized divider: remainder and quotient share a register</text>
+  <text x="20" y="58" font-size="14" fill="#4a5568">The combined register shifts left. Each cycle tries a subtraction and writes one quotient bit.</text>
+
+  <!-- divisor -->
+  <rect x="40" y="110" width="240" height="64" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="60" y="136" font-size="14" font-weight="bold" fill="#1a202c">Divisor register</text>
+  <text x="60" y="158" font-size="13.5" fill="#1a202c">fixed; never shifts</text>
+
+  <!-- ALU -->
+  <rect x="360" y="110" width="180" height="64" fill="#fffaf0" stroke="#b7791f" stroke-width="2"/>
+  <text x="450" y="136" font-size="15" font-weight="bold" fill="#1a202c" text-anchor="middle">ALU (subtract, test)</text>
+  <text x="450" y="158" font-size="13" fill="#1a202c" text-anchor="middle">upper half minus divisor</text>
+
+  <!-- combined register -->
+  <rect x="620" y="96" width="280" height="92" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <line x1="760" y1="96" x2="760" y2="188" stroke="#6b46c1" stroke-width="2"/>
+  <text x="690" y="122" font-size="13.5" font-weight="bold" fill="#1a202c" text-anchor="middle">Upper half</text>
+  <text x="690" y="142" font-size="12.5" fill="#1a202c" text-anchor="middle">partial remainder</text>
+  <text x="690" y="160" font-size="12.5" fill="#1a202c" text-anchor="middle">(starts at 0)</text>
+  <text x="830" y="122" font-size="13.5" font-weight="bold" fill="#1a202c" text-anchor="middle">Lower half</text>
+  <text x="830" y="142" font-size="12.5" fill="#1a202c" text-anchor="middle">dividend, becoming</text>
+  <text x="830" y="160" font-size="12.5" fill="#1a202c" text-anchor="middle">the quotient</text>
+  <text x="760" y="82" font-size="14" font-weight="bold" fill="#1a202c" text-anchor="middle">Combined remainder / quotient register</text>
+
+  <!-- arrows -->
+  <g stroke="#4a5568" stroke-width="2.5" fill="none">
+    <line x1="280" y1="142" x2="352" y2="142"/>
+    <line x1="540" y1="142" x2="612" y2="142"/>
+    <path d="M 690 188 L 690 250 L 450 250 L 450 182"/>
+  </g>
+  <g fill="#4a5568">
+    <polygon points="352,136 364,142 352,148"/>
+    <polygon points="612,136 624,142 612,148"/>
+    <polygon points="444,182 450,170 456,182"/>
+  </g>
+  <text x="480" y="242" font-size="13" fill="#4a5568">upper half feeds back for the trial subtraction</text>
+
+  <!-- control -->
+  <rect x="40" y="220" width="380" height="78" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+  <text x="60" y="246" font-size="14" font-weight="bold" fill="#1a202c">Control</text>
+  <text x="60" y="268" font-size="13.5" fill="#1a202c">result &#8805; 0: keep it, write quotient bit 1</text>
+  <text x="60" y="288" font-size="13.5" fill="#1a202c">result &lt; 0: restore upper half, write bit 0</text>
+  <path d="M 540 260 L 640 260 L 640 196" stroke="#c53030" stroke-width="2.5" fill="none" stroke-dasharray="6 4"/>
+  <text x="470" y="330" font-size="13.5" fill="#1a202c">whole register shifts left, once per cycle; the freed rightmost bit receives the quotient bit</text>
+
+  <text x="40" y="356" font-size="14" fill="#1a202c">At the end: upper half = remainder, lower half = quotient.</text>
+  <text x="40" y="382" font-size="13.5" fill="#4a5568">In MIPS the same split appears as HI (remainder) and LO (quotient), read with mfhi and mflo.</text>
+</svg>

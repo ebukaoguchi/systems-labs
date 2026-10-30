@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" font-family="sans-serif">
+  <rect x="0" y="0" width="920" height="430" fill="#ffffff"/>
+  <text x="20" y="34" font-size="22" font-weight="bold" fill="#1a202c">A 4-bit adder built from four full adders</text>
+  <text x="20" y="58" font-size="14" fill="#4a5568">Each full adder adds one bit pair plus the carry from the bit on its right. The carry ripples left.</text>
+
+  <!-- full adder blocks -->
+  <g font-size="14" text-anchor="middle">
+    <!-- FA0 (rightmost, bit 0) -->
+    <rect x="700" y="120" width="130" height="80" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="765" y="152" font-weight="bold" fill="#1a202c">Full adder</text>
+    <text x="765" y="174" fill="#1a202c">bit 0</text>
+    <!-- FA1 -->
+    <rect x="520" y="120" width="130" height="80" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="585" y="152" font-weight="bold" fill="#1a202c">Full adder</text>
+    <text x="585" y="174" fill="#1a202c">bit 1</text>
+    <!-- FA2 -->
+    <rect x="340" y="120" width="130" height="80" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="405" y="152" font-weight="bold" fill="#1a202c">Full adder</text>
+    <text x="405" y="174" fill="#1a202c">bit 2</text>
+    <!-- FA3 -->
+    <rect x="160" y="120" width="130" height="80" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="225" y="152" font-weight="bold" fill="#1a202c">Full adder</text>
+    <text x="225" y="174" fill="#1a202c">bit 3</text>
+  </g>
+
+  <!-- A and B inputs from top -->
+  <g font-size="13" fill="#1a202c" text-anchor="middle">
+    <text x="735" y="92">A0</text><text x="795" y="92">B0</text>
+    <text x="555" y="92">A1</text><text x="615" y="92">B1</text>
+    <text x="375" y="92">A2</text><text x="435" y="92">B2</text>
+    <text x="195" y="92">A3</text><text x="255" y="92">B3</text>
+  </g>
+  <g stroke="#4a5568" stroke-width="2">
+    <line x1="735" y1="98" x2="735" y2="120"/><line x1="795" y1="98" x2="795" y2="120"/>
+    <line x1="555" y1="98" x2="555" y2="120"/><line x1="615" y1="98" x2="615" y2="120"/>
+    <line x1="375" y1="98" x2="375" y2="120"/><line x1="435" y1="98" x2="435" y2="120"/>
+    <line x1="195" y1="98" x2="195" y2="120"/><line x1="255" y1="98" x2="255" y2="120"/>
+  </g>
+
+  <!-- carry chain -->
+  <g stroke="#c53030" stroke-width="2.5">
+    <line x1="700" y1="185" x2="650" y2="185"/>
+    <line x1="520" y1="185" x2="470" y2="185"/>
+    <line x1="340" y1="185" x2="290" y2="185"/>
+    <line x1="160" y1="185" x2="95" y2="185"/>
+    <line x1="895" y1="185" x2="830" y2="185"/>
+  </g>
+  <g font-size="13" fill="#c53030">
+    <text x="655" y="176">carry</text>
+    <text x="475" y="176">carry</text>
+    <text x="295" y="176">carry</text>
+    <text x="30" y="180">carry out</text>
+    <text x="30" y="198">(overflow clue)</text>
+    <text x="838" y="176">carry in = 0</text>
+  </g>
+
+  <!-- sums at bottom -->
+  <g stroke="#4a5568" stroke-width="2">
+    <line x1="765" y1="200" x2="765" y2="238"/>
+    <line x1="585" y1="200" x2="585" y2="238"/>
+    <line x1="405" y1="200" x2="405" y2="238"/>
+    <line x1="225" y1="200" x2="225" y2="238"/>
+  </g>
+  <g font-size="14" font-weight="bold" fill="#1a202c" text-anchor="middle">
+    <text x="765" y="260">S0</text><text x="585" y="260">S1</text>
+    <text x="405" y="260">S2</text><text x="225" y="260">S3</text>
+  </g>
+
+  <!-- partitioned adder panel -->
+  <rect x="20" y="292" width="880" height="112" fill="#f0fff4" stroke="#2f855a" stroke-width="2"/>
+  <text x="40" y="322" font-size="16" font-weight="bold" fill="#1a202c">Partitioned variant: one wide unit, independent lanes</text>
+  <text x="40" y="346" font-size="13.5" fill="#1a202c">Block the carry between lanes and a 64-bit adder becomes four independent 16-bit adders:</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="40" y="360" width="190" height="30" fill="#ffffff" stroke="#2f855a"/>
+    <text x="135" y="380" fill="#1a202c">Lane 3: bits 63-48</text>
+    <rect x="255" y="360" width="190" height="30" fill="#ffffff" stroke="#2f855a"/>
+    <text x="350" y="380" fill="#1a202c">Lane 2: bits 47-32</text>
+    <rect x="470" y="360" width="190" height="30" fill="#ffffff" stroke="#2f855a"/>
+    <text x="565" y="380" fill="#1a202c">Lane 1: bits 31-16</text>
+    <rect x="685" y="360" width="190" height="30" fill="#ffffff" stroke="#2f855a"/>
+    <text x="780" y="380" fill="#1a202c">Lane 0: bits 15-0</text>
+  </g>
+  <g stroke="#c53030" stroke-width="3">
+    <line x1="238" y1="368" x2="248" y2="382"/><line x1="248" y1="368" x2="238" y2="382"/>
+    <line x1="453" y1="368" x2="463" y2="382"/><line x1="463" y1="368" x2="453" y2="382"/>
+    <line x1="668" y1="368" x2="678" y2="382"/><line x1="678" y1="368" x2="668" y2="382"/>
+  </g>
+  <text x="700" y="346" font-size="13.5" fill="#c53030">red X = carry blocked</text>
+</svg>

@@ -12,10 +12,13 @@ These modules come from a single conviction: students learn systems by following
 | 2 | [First Contact with the Machine — MIPS Assembly and Machine Code in QtSpim](module-qtspim-intro/) | 03 · ISA | SCIS 216 Computer Organization & Design, Lab 1 | Taught, Spring & Fall 2026 |
 | 3 | [Logic Gates on a Breadboard — NOT, AND, OR with 74-Series ICs](module-logic-gates-breadboard/) | 04 · Datapath | SCIS 216, Lab 6 | Taught, Spring 2026 |
 | 4 | [Build a MIPS Assembler — From Assembly to Machine Code](module-capstone-mips-assembler/) | 03 · ISA, in reverse | SCIS 216 capstone | Designed — first run end of Fall 2026 |
+| 5 | [Inside the ALU — Adders, Multipliers, and Dividers](module-arithmetic-datapath/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Lectures and in-class activities taught Fall 2026; packaged as a module |
 
 Further modules from both courses (procedures and the stack, branching and control flow, register spilling, the C++ debugging lab, and the remaining SCIS 123 sequence) are being prepared for release.
 
 **On the roadmap:** a GitHub-based workflow for SCIS 123 — a *Getting Started with GitHub* onboarding module, with students submitting their lab code through GitHub — designed for the course and scheduled to pilot in a future semester. It will be documented here once it has actually run in the classroom.
+
+**Shared setup:** [Installing QtSpim for MIPS32](setup/qtspim-installation.md): the simulator installation guide (macOS, Windows, Linux) used by every MIPS module in this collection.
 
 ## Course context
 
