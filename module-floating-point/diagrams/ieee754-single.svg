@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="200" viewBox="0 0 760 200" font-family="sans-serif">
+  <text x="380" y="24" text-anchor="middle" font-size="16" font-weight="bold">IEEE 754 single precision: one 32-bit word, three fields</text>
+
+  <!-- field boxes -->
+  <rect x="40" y="50" width="50" height="56" fill="#f4a259" stroke="#333"/>
+  <rect x="90" y="50" width="180" height="56" fill="#7fb069" stroke="#333"/>
+  <rect x="270" y="50" width="450" height="56" fill="#588157" stroke="#333"/>
+
+  <!-- field contents -->
+  <text x="65" y="76" text-anchor="middle" font-size="15" font-weight="bold">S</text>
+  <text x="65" y="96" text-anchor="middle" font-size="11">1 bit</text>
+  <text x="180" y="76" text-anchor="middle" font-size="15" font-weight="bold">Exponent</text>
+  <text x="180" y="96" text-anchor="middle" font-size="11">8 bits, bias 127</text>
+  <text x="495" y="76" text-anchor="middle" font-size="15" font-weight="bold">Fraction</text>
+  <text x="495" y="96" text-anchor="middle" font-size="11">23 bits, the part after the leading 1.</text>
+
+  <!-- bit positions -->
+  <text x="40" y="126" font-size="11">bit 31</text>
+  <text x="196" y="126" font-size="11">bits 30-23</text>
+  <text x="600" y="126" font-size="11">bits 22-0</text>
+
+  <!-- formula -->
+  <text x="380" y="162" text-anchor="middle" font-size="14">value = (-1)^S x 1.fraction x 2^(exponent - 127)</text>
+  <text x="380" y="186" text-anchor="middle" font-size="12">Example: 7.5 = 0x40F00000: S = 0, exponent = 129, fraction = 0x700000, so 1.875 x 2^2</text>
+</svg>

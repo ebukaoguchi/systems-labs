@@ -14,8 +14,12 @@ These modules come from a single conviction: students learn systems by following
 | 4 | [Build a MIPS Assembler — From Assembly to Machine Code](module-capstone-mips-assembler/) | 03 · ISA, in reverse | SCIS 216 capstone | Designed — first run end of Fall 2026 |
 | 5 | [Inside the ALU — Adders, Multipliers, and Dividers](module-arithmetic-datapath/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Lectures and in-class activities taught Fall 2026; packaged as a module |
 | 6 | [Putting It All Together — The Student Grade Calculator](module-cpp-student-grade-calculator/) | 01 · Source code | SCIS 123 C++ Programming, Lab 6 | Taught, Fall 2026 |
+| 7 | [Making Decisions — Conditional Branching and Control Flow in MIPS](module-branching-control-flow/) | 03 · ISA | SCIS 216 Computer Organization & Design, Lab 6 | Taught, Fall 2026 |
+| 8 | [Who Calls Whom — Leaf and Non-Leaf Procedures and the Stack](module-procedures-stack/) | 03 · ISA | SCIS 216, Lab 4 | Taught, Fall 2026 |
+| 9 | [When Registers Run Out — Register Spilling in MIPS](module-register-spilling/) | 03 · ISA | SCIS 216, Lab 5 | Taught, Fall 2026 |
+| 10 | [Numbers with Points — Floating Point Representation and Arithmetic](module-floating-point/) | 03 · ISA | SCIS 216, companion to Inside the ALU | Lecture material taught Fall 2026; packaged as a module |
 
-Further modules from both courses (procedures and the stack, branching and control flow, register spilling, the C++ debugging lab, and the remaining SCIS 123 sequence) are being prepared for release.
+More modules from both courses are in preparation, including the SCIS 123 debugging lab and the remaining SCIS 123 sequence.
 
 **On the roadmap:** a GitHub-based workflow for SCIS 123 — a *Getting Started with GitHub* onboarding module, with students submitting their lab code through GitHub — designed for the course and scheduled to pilot in a future semester. It will be documented here once it has actually run in the classroom.
 
