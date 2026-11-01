@@ -18,8 +18,9 @@ These modules come from a single conviction: students learn systems by following
 | 8 | [Who Calls Whom — Leaf and Non-Leaf Procedures and the Stack](module-procedures-stack/) | 03 · ISA | SCIS 216, Lab 4 | Taught, Fall 2026 |
 | 9 | [When Registers Run Out — Register Spilling in MIPS](module-register-spilling/) | 03 · ISA | SCIS 216, Lab 5 | Taught, Fall 2026 |
 | 10 | [Numbers with Points — Floating Point Representation and Arithmetic](module-floating-point/) | 03 · ISA | SCIS 216, companion to Inside the ALU | Lecture material taught Fall 2026; packaged as a module |
+| 11 | [Find the Bugs — Debugging and Reading Code in C++](module-cpp-debugging/) | 01 · Source code | SCIS 123 C++ Programming, Lab 3 | Taught, Fall 2026 |
 
-More modules from both courses are in preparation, including the SCIS 123 debugging lab and the remaining SCIS 123 sequence.
+More modules are in preparation, including the remaining SCIS 123 sequence.
 
 **On the roadmap:** a GitHub-based workflow for SCIS 123 — a *Getting Started with GitHub* onboarding module, with students submitting their lab code through GitHub — designed for the course and scheduled to pilot in a future semester. It will be documented here once it has actually run in the classroom.
 
