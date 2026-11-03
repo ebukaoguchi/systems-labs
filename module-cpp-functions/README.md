@@ -54,6 +54,8 @@ A second menu cycle with choice 4 and numbers 10 0 prints "Cannot divide by zero
 
 **Milestone 8 — Extension: the calculator remembers.** The instructor's extended version of the calculator accompanies this module as a second program, `menuDrivenCalculatorWithFiles.cpp`. Each operation now computes its result into a variable and hands it to a `saveResult()` function, which appends one line (for example, `10 + 20 = 30`) to a file named `results.txt`; the menu gains a View Saved Results option, read back by a `viewResults()` function, and Exit moves to option 6. Three details carry the teaching. The file is opened in append mode (`ios::app`), so the history survives between runs instead of being overwritten. A refused division is never saved, because `divide()` returns before the save call is reached — placing the save inside each operation gives the guard jurisdiction over the file as well as the screen. And viewing before anything has been saved prints "No saved results found." rather than failing, because a missing file is an expected state, not an error. This is also where file handling, first met earlier in this pathway, returns inside a program the students built themselves.
 
+The extension also ships in a second form, `menuDrivenCalculatorIfElse.cpp`, identical in behaviour in every respect — same menus, same prompts, same saved file — except that the menu selection is an `if` / `else if` chain instead of a `switch`. It exists for classes that meet selection through `if` first, and it makes a clean comparison object: one program, two selection mechanisms, nothing else changed, which is the Lab 5 comparison (ranges and complex conditions versus exact-value matching) with the variables held constant.
+
 ## Deliverables
 
 Students submit:
