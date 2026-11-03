@@ -4,7 +4,7 @@
 
 ## The deck, as published
 
-The Lab 9 deck is published whole: 15 slides, no trims. Screening before publication found no publisher or textbook slide content and no examination material in it; it is the instructor's own lab deck, in the same pattern as the Lab 3, Lab 4, and Lab 6 decks already in this repository. The complete menu-driven calculator program is part of the deck as taught, and ships as `menuDrivenCalculator.cpp`. The in-class exercise (menu-driven grade calculator) appears in the deck as a specification with required prototypes and an example execution only — no solution is published, in this repository or in the deck.
+The Lab 9 deck is published whole, no trims, in the instructor's revised version: 17 slides. (The module first published the deck at 15 slides; the instructor's revision, which adds the two decimal-input slides described under Milestone 9 below, replaced it the same day. The repository's history retains the earlier version.) Screening before publication found no publisher or textbook slide content and no examination material in it; it is the instructor's own lab deck, in the same pattern as the Lab 3, Lab 4, and Lab 6 decks already in this repository. The complete menu-driven calculator program is part of the deck as taught, and ships as `menuDrivenCalculator.cpp`. The in-class exercise (menu-driven grade calculator) appears in the deck as a specification with required prototypes and an example execution only — no solution is published, in this repository or in the deck.
 
 ## Three things to know before you teach it
 
@@ -24,7 +24,7 @@ The Lab 9 deck is published whole: 15 slides, no trims. Screening before publica
 
 ## The decimal-input failure, and the two hardened forms (Milestone 9)
 
-The failure analysis, the `double` solution, and the input-validation pattern in this milestone were supplied by the instructor as teaching material for this module; the two programs were assembled from them and verified as described in the Verification section. Staging notes:
+The failure analysis, the `double` solution, and the input-validation pattern in this milestone were supplied by the instructor as teaching material for this module, and now also stand in the deck itself: the revised deck's two added slides (after the calculator's sample runs, before the exercise) present the failure and both solutions in short form. The two programs were assembled from the full material and verified as described in the Verification section. Staging notes:
 
 - Reproduce the hang live only under a timeout or with output redirected — in two seconds the unmodified calculator produced over eleven million lines. The diagnostic details students should extract: `a` received 40 (the integer part), `b` was set to 0 (since C++11 a failed arithmetic extraction writes 0 to its target), the stream's failure state makes every subsequent extraction a no-op, and `choice`, never re-read, pins the loop. The phantom `Result: 40` is the tell that `b` was zeroed rather than left alone.
 - Guarding the operands read alone (the form in which the validation pattern was supplied) fixes the decimal case but not a letter typed at the choice prompt, which fails that read the same way and hangs identically. `menuDrivenCalculatorHardened.cpp` therefore applies the same test-clear-discard pattern to the `choice` read as well; that extension of the supplied pattern is deliberate and is the version to hand out.
