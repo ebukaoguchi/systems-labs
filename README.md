@@ -19,6 +19,7 @@ These modules come from a single conviction: students learn systems by following
 | 9 | [When Registers Run Out — Register Spilling in MIPS](module-register-spilling/) | 03 · ISA | SCIS 216, Lab 5 | Taught, Fall 2026 |
 | 10 | [Numbers with Points — Floating Point Representation and Arithmetic](module-floating-point/) | 03 · ISA | SCIS 216, companion to Inside the ALU | Lecture material taught Fall 2026; packaged as a module |
 | 11 | [Find the Bugs — Debugging and Reading Code in C++](module-cpp-debugging/) | 01 · Source code | SCIS 123 C++ Programming, Lab 3 | Taught, Fall 2026 |
+| 12 | [One Value, Four Bases — Number Systems in C++](module-cpp-number-systems/) | 01 · Source code | SCIS 123 C++ Programming, Lab 4 | Taught, Fall 2026 |
 
 More modules are in preparation, including the remaining SCIS 123 sequence.
 
