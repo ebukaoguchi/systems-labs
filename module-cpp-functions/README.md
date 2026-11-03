@@ -56,6 +56,8 @@ A second menu cycle with choice 4 and numbers 10 0 prints "Cannot divide by zero
 
 The extension also ships in a second form, `menuDrivenCalculatorIfElse.cpp`, identical in behaviour in every respect — same menus, same prompts, same saved file — except that the menu selection is an `if` / `else if` chain instead of a `switch`. It exists for classes that meet selection through `if` first, and it makes a clean comparison object: one program, two selection mechanisms, nothing else changed, which is the Lab 5 comparison (ranges and complex conditions versus exact-value matching) with the variables held constant.
 
+A third form, `menuDrivenCalculatorValueReturning.cpp`, reverses the deck calculator's central decision: the operations return their results (`int` for add, subtract, and multiply; `double` for divide) instead of displaying them, and `main()` owns both the printing and the division-by-zero check, which now stands in front of the call rather than inside the function. No file saving in this form; exit is option 5 again. It is the shape the Milestone 7 exercise requires — calculations returned, display in `main()` — so students can see the pattern working before they have to produce it, and the contrast with the `void` calculator is the Milestone 4 distinction running in a full program rather than a two-line example.
+
 ## Deliverables
 
 Students submit:
