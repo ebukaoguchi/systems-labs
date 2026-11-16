@@ -36,13 +36,17 @@ By the end of this module, students can:
 | `arithmetic_algorithms.c` | Both multiplication algorithms in C, with a self-checking `main` (worked example, worksheet values, and edge cases) |
 | `multiplier.asm` | The basic shift-and-add loop in MIPS for QtSpim. Ships computing 6 × 3; students change the values to 9 × 6 |
 | `division.asm` | MIPS `div` and the HI/LO registers, with a software divide-by-zero guard. Ships computing 17 ÷ 5; students change the values and then break the divisor on purpose |
-| `diagrams/` | Five diagrams drawn for this module: `adder.svg`, `full-adder-schematic.svg`, `multiplier-basic.svg`, `multiplier-optimized.svg`, `divider-optimized.svg` |
+| `diagrams/` | Six diagrams drawn for this module: `adder.svg`, `half-adder-schematic.svg`, `full-adder-schematic.svg`, `multiplier-basic.svg`, `multiplier-optimized.svg`, `divider-optimized.svg` |
 | `images/` | `full-adder-breadboard.jpg`: the instructor's physical build of the Part 1 full adder, working (7486, 7408, and 7432 on a breadboard); `full-adder-breadboard-diagram.jpg`: the breadboard wiring diagram for the same circuit |
 | `INSTRUCTOR_NOTES.md` | Pacing, the checkpoints that catch the common failures, the XOR/parts caution, and the publication boundary |
 
 ## The full adder in Part 1: schematic, truth table, and physical build
 
 One full adder at gate level: two half adders and an OR gate. The first half adder adds A and B; the second adds that sum to the carry-in; the OR gate merges the two possible carries into the carry-out.
+
+Each half adder on its own is one XOR gate and one AND gate: the XOR produces the sum bit, the AND the carry. It is also a breadboard project in its own right: the half adder in [From Gates to Systems](https://ebukaoguchi.github.io/gates-to-systems/) is built from one gate of a 7486 and one gate of a 7408, the same chips as the full adder build below.
+
+![Half adder schematic: one XOR gate and one AND gate](diagrams/half-adder-schematic.svg)
 
 ![Full adder schematic: two half adders and an OR gate](diagrams/full-adder-schematic.svg)
 
