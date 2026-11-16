@@ -63,7 +63,7 @@ The same circuit built on a breadboard: one 7486 supplies both XOR gates, one 74
 
 ![The full adder built on a breadboard from 7486, 7408, and 7432 chips, with both LEDs lit](images/full-adder-breadboard.jpg)
 
-To follow the wiring pin by pin, use the breadboard diagram below: the same circuit laid out on a breadboard, with every chip pin labelled. Note the second XOR gate on the 7486: its inputs are pins 4 and 5, and Sum comes out of pin 6. The same board is interactive in [From Gates to Systems](https://ebukaoguchi.github.io/gates-to-systems/), where the switches can be flipped and the highlighted truth-table row follows the inputs.
+To follow the wiring pin by pin, use the breadboard diagram below: the same circuit laid out on a breadboard, with every chip pin labelled. Note the second XOR gate on the 7486: its inputs are pins 4 and 5, and Sum comes out of pin 6. The same board is interactive in [From Gates to Systems](https://ebukaoguchi.github.io/gates-to-systems/), where the switches can be flipped and the highlighted truth-table row follows the inputs. The site carries more breadboard projects in the same style, including a half adder built from a 7486 and a 7408, for students who want to keep wiring.
 
 ![Breadboard wiring diagram for the full adder: 7486, 7408, and 7432 with labelled pins](images/full-adder-breadboard-diagram.jpg)
 

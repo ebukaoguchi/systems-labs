@@ -21,12 +21,15 @@ These modules come from a single conviction: students learn systems by following
 | 11 | [Find the Bugs — Debugging and Reading Code in C++](module-cpp-debugging/) | 01 · Source code | SCIS 123 C++ Programming, Lab 3 | Taught, Fall 2026 |
 | 12 | [One Value, Four Bases — Number Systems in C++](module-cpp-number-systems/) | 01 · Source code | SCIS 123 C++ Programming, Lab 4 | Taught, Fall 2026 |
 | 13 | [Many Small Jobs, One Menu — User-Defined Functions in C++](module-cpp-functions/) | 01 · Source code | SCIS 123 C++ Programming, Lab 9 | Taught, Fall 2026 |
+| 14 | [Store the Grid — Arrays and Nested Loops in C++](module-cpp-arrays/) | 01 · Source code | SCIS 123 C++ Programming, Lab 10 | Taught, Fall 2026 |
 
 More modules are in preparation, including the remaining SCIS 123 sequence.
 
 **On the roadmap:** a GitHub-based workflow for SCIS 123 — a *Getting Started with GitHub* onboarding module, with students submitting their lab code through GitHub — designed for the course and scheduled to pilot in a future semester. It will be documented here once it has actually run in the classroom.
 
 **Shared setup:** [Installing QtSpim for MIPS32](setup/qtspim-installation.md): the simulator installation guide (macOS, Windows, Linux) used by every MIPS module in this collection.
+
+**Companion site:** [From Gates to Systems](https://ebukaoguchi.github.io/gates-to-systems/) is the interactive companion to these modules. For more projects like the breadboard builds here, including a half adder wired from 74-series ICs, that is the place: every circuit there runs in the browser, with switches to flip and truth tables that follow the inputs.
 
 ## Course context
 
