@@ -59,9 +59,13 @@ One full adder at gate level: two half adders and an OR gate. The first half add
 
 Sum is A ⊕ B ⊕ Cin: it is 1 when an odd number of the inputs are 1. Cout is 1 when at least two of the inputs are 1.
 
-The same circuit built on a breadboard: one 7486 supplies both XOR gates, one 7408 both AND gates, and one 7432 the OR gate, with the sum and carry-out shown on LEDs.
+The same circuit built on a breadboard: one 7486 supplies both XOR gates, one 7408 both AND gates, and one 7432 the OR gate, with the sum and carry-out shown on LEDs. The photograph shows the build working, with A = B = Cin = 1, so both LEDs are lit: Sum = 1 and Cout = 1.
 
-![The full adder built on a breadboard from 7486, 7408, and 7432 chips](images/full-adder-breadboard.jpg)
+![The full adder built on a breadboard from 7486, 7408, and 7432 chips, with both LEDs lit](images/full-adder-breadboard.jpg)
+
+To follow the wiring pin by pin, use the breadboard diagram below: the same circuit laid out on a breadboard, with every chip pin labelled. Note the second XOR gate on the 7486: its inputs are pins 4 and 5, and Sum comes out of pin 6. The same board is interactive in [From Gates to Systems](https://ebukaoguchi.github.io/gates-to-systems/), where the switches can be flipped and the highlighted truth-table row follows the inputs.
+
+![Breadboard wiring diagram for the full adder: 7486, 7408, and 7432 with labelled pins](images/full-adder-breadboard-diagram.jpg)
 
 ## Staged milestones
 
