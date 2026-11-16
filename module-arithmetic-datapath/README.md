@@ -37,7 +37,7 @@ By the end of this module, students can:
 | `multiplier.asm` | The basic shift-and-add loop in MIPS for QtSpim. Ships computing 6 × 3; students change the values to 9 × 6 |
 | `division.asm` | MIPS `div` and the HI/LO registers, with a software divide-by-zero guard. Ships computing 17 ÷ 5; students change the values and then break the divisor on purpose |
 | `diagrams/` | Five diagrams drawn for this module: `adder.svg`, `full-adder-schematic.svg`, `multiplier-basic.svg`, `multiplier-optimized.svg`, `divider-optimized.svg` |
-| `images/` | `full-adder-breadboard.jpg`: the instructor's physical build of the Part 1 full adder (7486, 7408, and 7432 on a breadboard) |
+| `images/` | `full-adder-breadboard.jpg`: the instructor's physical build of the Part 1 full adder, working (7486, 7408, and 7432 on a breadboard); `full-adder-breadboard-diagram.jpg`: the breadboard wiring diagram for the same circuit |
 | `INSTRUCTOR_NOTES.md` | Pacing, the checkpoints that catch the common failures, the XOR/parts caution, and the publication boundary |
 
 ## The full adder in Part 1: schematic, truth table, and physical build
