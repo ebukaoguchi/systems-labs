@@ -32,12 +32,14 @@ The floating-point material from the same lecture sequence (IEEE 754 representat
 - **Part 5:** the restore step is where traces collapse. Have students write the trial subtraction result *before* deciding keep-or-restore, in a scratch column, rather than erasing. Erasing the failed subtraction is exactly the habit that makes their traces unreadable.
 - **Part 6b:** students expect `div` to name a destination register. The HI/LO surprise is the teaching moment: ask where the answer "lives" before revealing `mflo`/`mfhi`.
 
-## The adder activity: simulation, not solder
+## The adder activity: simulation for students, one instructor build
 
-Part 1 asks students to reason about a full adder, whose sum bit is A ⊕ B ⊕ carry-in. The breadboard lab's parts set (7404, 7408, 7432) contains no XOR gate, so a physical full-adder build is **not** possible from the existing bench kit. Options, in order of preference:
+Part 1 asks students to reason about a full adder, whose sum bit is A ⊕ B ⊕ carry-in. The breadboard lab's parts set (7404, 7408, 7432) contains no XOR gate, so a physical full-adder build is **not** possible from the existing student bench kit. Options, in order of preference:
 
 1. Keep Part 1 as diagram labelling plus a simulator build (any free logic simulator) — this is how the module ships.
 2. If a physical build is wanted, add one 7486 (quad XOR) per bench to the parts list; a half adder needs one XOR and one AND, a full adder two XORs, two ANDs, and one OR, all available once the 7486 is added.
+
+The instructor's own build now exists and is photographed in the module README, alongside the gate-level schematic and the truth table: one 7486, one 7408, and one 7432, with sum and carry-out on LEDs. It is a demonstration reference; it does not change the student requirement.
 
 Do not promise the physical build in the student worksheet until the parts are actually in the room.
 

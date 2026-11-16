@@ -32,14 +32,14 @@ Questions:
 
 ## Part 1: From logic gates to an adder
 
-Use the module diagram `diagrams/adder.svg`.
+Use the module diagram `diagrams/adder.svg`. The gate-level schematic of one full adder, its truth table, and a photograph of the instructor's breadboard build are in the module README (schematic: `diagrams/full-adder-schematic.svg`).
 
 1. Label the two input bits, the sum output, the carry-in, and the carry-out of one full-adder block.
 2. In a 4-bit adder built from four full adders, where does the carry-out of bit 0 go? Where does the carry-out of bit 3 go, and what can it tell you?
 3. A **partitioned** adder splits one wide adder into independent lanes, for example four 16-bit lanes inside a 64-bit unit, with the carries between lanes blocked. Give:
    - one kind of workload this helps, and why;
    - one thing that becomes harder or is given up.
-4. The breadboard lab used AND, OR, and NOT gates. A full adder also needs XOR (sum is A ⊕ B ⊕ carry-in). In one sentence, explain why AND and OR alone feel awkward for the sum bit. *(Simulation only: this module does not require a physical full-adder build.)*
+4. The breadboard lab used AND, OR, and NOT gates. A full adder also needs XOR (sum is A ⊕ B ⊕ carry-in). In one sentence, explain why AND and OR alone feel awkward for the sum bit. *(This module does not require a physical full-adder build; the README shows the instructor's build.)*
 
 ---
 

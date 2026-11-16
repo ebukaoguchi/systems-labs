@@ -26,7 +26,7 @@ By the end of this module, students can:
 
 - **Simulator:** QtSpim (MIPS32). Follow the shared guide: [Installing QtSpim for MIPS32](../setup/qtspim-installation.md).
 - **Prerequisites:** the QtSpim Intro module (registers, `andi`, `add`, `sll`, `srl`) and, ideally, the Logic Gates on a Breadboard module (AND, OR, NOT, truth tables).
-- **No physical build is required.** The full-adder discussion in Part 1 is a diagram and simulation activity: a physical build would need a 7486 XOR IC, which is not in the breadboard lab's parts set. See `INSTRUCTOR_NOTES.md`.
+- **No physical build is required.** The full-adder discussion in Part 1 is a diagram and simulation activity. A physical build is possible with one 7486 XOR IC alongside the 7408 and 7432 (see the instructor's build below), but that chip is not in the breadboard lab's parts set. See `INSTRUCTOR_NOTES.md`.
 
 ## The module files
 
@@ -36,8 +36,32 @@ By the end of this module, students can:
 | `arithmetic_algorithms.c` | Both multiplication algorithms in C, with a self-checking `main` (worked example, worksheet values, and edge cases) |
 | `multiplier.asm` | The basic shift-and-add loop in MIPS for QtSpim. Ships computing 6 × 3; students change the values to 9 × 6 |
 | `division.asm` | MIPS `div` and the HI/LO registers, with a software divide-by-zero guard. Ships computing 17 ÷ 5; students change the values and then break the divisor on purpose |
-| `diagrams/` | Four diagrams drawn for this module: `adder.svg`, `multiplier-basic.svg`, `multiplier-optimized.svg`, `divider-optimized.svg` |
+| `diagrams/` | Five diagrams drawn for this module: `adder.svg`, `full-adder-schematic.svg`, `multiplier-basic.svg`, `multiplier-optimized.svg`, `divider-optimized.svg` |
+| `images/` | `full-adder-breadboard.jpg`: the instructor's physical build of the Part 1 full adder (7486, 7408, and 7432 on a breadboard) |
 | `INSTRUCTOR_NOTES.md` | Pacing, the checkpoints that catch the common failures, the XOR/parts caution, and the publication boundary |
+
+## The full adder in Part 1: schematic, truth table, and physical build
+
+One full adder at gate level: two half adders and an OR gate. The first half adder adds A and B; the second adds that sum to the carry-in; the OR gate merges the two possible carries into the carry-out.
+
+![Full adder schematic: two half adders and an OR gate](diagrams/full-adder-schematic.svg)
+
+| A | B | Cin | Sum | Cout |
+|---|---|-----|-----|------|
+| 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 1 | 0 |
+| 0 | 1 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 | 1 |
+| 1 | 0 | 0 | 1 | 0 |
+| 1 | 0 | 1 | 0 | 1 |
+| 1 | 1 | 0 | 0 | 1 |
+| 1 | 1 | 1 | 1 | 1 |
+
+Sum is A ⊕ B ⊕ Cin: it is 1 when an odd number of the inputs are 1. Cout is 1 when at least two of the inputs are 1.
+
+The same circuit built on a breadboard: one 7486 supplies both XOR gates, one 7408 both AND gates, and one 7432 the OR gate, with the sum and carry-out shown on LEDs.
+
+![The full adder built on a breadboard from 7486, 7408, and 7432 chips](images/full-adder-breadboard.jpg)
 
 ## Staged milestones
 
