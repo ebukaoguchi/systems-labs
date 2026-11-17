@@ -26,7 +26,7 @@ By the end of this module, students can:
 
 - **Simulator:** QtSpim (MIPS32). Follow the shared guide: [Installing QtSpim for MIPS32](../setup/qtspim-installation.md).
 - **Prerequisites:** the QtSpim Intro module (registers, `andi`, `add`, `sll`, `srl`) and, ideally, the Logic Gates on a Breadboard module (AND, OR, NOT, truth tables).
-- **No physical build is required.** The adder discussion in Part 1 is a diagram and simulation activity. Physical builds are documented below for the half adder (one 7486 alongside one 7408), the full adder (adding a 7432), and a 1-bit ALU slice (adding a second 7408 and a 7404); the 7486 is not in the breadboard lab's parts set. See `INSTRUCTOR_NOTES.md`.
+- **No physical build is required.** The adder discussion in Part 1 is a diagram and simulation activity. Physical builds are documented below for the half adder (one 7486 alongside one 7408), the full adder (adding a 7432), and a full subtractor (adding a 7404); the 7486 is not in the breadboard lab's parts set. See `INSTRUCTOR_NOTES.md`.
 
 ## The module files
 
@@ -36,8 +36,8 @@ By the end of this module, students can:
 | `arithmetic_algorithms.c` | Both multiplication algorithms in C, with a self-checking `main` (worked example, worksheet values, and edge cases) |
 | `multiplier.asm` | The basic shift-and-add loop in MIPS for QtSpim. Ships computing 6 × 3; students change the values to 9 × 6 |
 | `division.asm` | MIPS `div` and the HI/LO registers, with a software divide-by-zero guard. Ships computing 17 ÷ 5; students change the values and then break the divisor on purpose |
-| `diagrams/` | Seven diagrams drawn for this module: `adder.svg`, `half-adder-schematic.svg`, `full-adder-schematic.svg`, `alu-slice-schematic.svg`, `multiplier-basic.svg`, `multiplier-optimized.svg`, `divider-optimized.svg` |
-| `images/` | `half-adder-breadboard.jpg`, `full-adder-breadboard.jpg`, and `alu-slice-breadboard.jpg`: the instructor's physical builds of the half adder, the Part 1 full adder (working: 7486, 7408, and 7432 on a breadboard), and the 1-bit ALU slice; the matching `*-breadboard-diagram.jpg` files are the breadboard wiring diagrams for the same circuits from From Gates to Systems |
+| `diagrams/` | Eight diagrams drawn for this module: `adder.svg`, `half-adder-schematic.svg`, `full-adder-schematic.svg`, `full-subtractor-schematic.svg`, `alu-slice-schematic.svg`, `multiplier-basic.svg`, `multiplier-optimized.svg`, `divider-optimized.svg` |
+| `images/` | `half-adder-breadboard.jpg`, `full-adder-breadboard.jpg`, and `full-subtractor-breadboard.jpg`: the instructor's physical builds of the half adder, the Part 1 full adder (working: 7486, 7408, and 7432 on a breadboard), and the full subtractor; the matching `*-breadboard-diagram.jpg` files are the breadboard wiring diagrams for the same circuits from From Gates to Systems; `alu-slice-breadboard-diagram.jpg` is the wiring diagram for a 1-bit ALU slice build still to come |
 | `INSTRUCTOR_NOTES.md` | Pacing, the checkpoints that catch the common failures, the XOR/parts caution, and the publication boundary |
 
 ## The half adder: truth table, schematic, and a build you can follow
@@ -182,93 +182,83 @@ The photograph shows the last row, A = B = Cin = 1, on the instructor's own buil
 
 The same board is interactive in [From Gates to Systems](https://ebukaoguchi.github.io/gates-to-systems/), where the switches can be flipped and the highlighted truth-table row follows the inputs. The site carries more breadboard projects in the same style, including a half adder built from a 7486 and a 7408, for students who want to keep wiring.
 
-## The 1-bit ALU slice: operation table, schematic, and a build you can follow
+## The full subtractor: truth table, schematic, and a build you can follow
 
-Chain four full adders and the carries ripple from one slice to the next; put a few gates around one full adder and it becomes a slice of an ALU. The adder at this build's centre always runs. One XOR gate can flip B before it reaches the adder, and that flip is what turns addition into subtraction: with Sub = 1 and Cin = 1 the slice computes A − B, because subtracting is adding the flipped B plus one. Two more gates compute A · B and A + B as candidates, and a two-stage select, driven by OP1 and OP0, chooses which of the three answers reaches the output F. Cout always reports the adder's carry, whatever F is showing, exactly as it does in a real slice. Four of these slices, each Cout wired to the next slice's Cin, make a 4-bit ALU.
+The full adder's mirror. Where the full adder adds a carry-in, the full subtractor subtracts a borrow-in: two half subtractors in series, the first taking B from A, the second taking Bin from that result. Either stage can demand a borrow, so the two borrow terms meet in an OR gate, exactly where the full adder's two carries meet.
 
-Six inputs fan out to as many as four pins each, so build each input as a single node on one strip of the board and jumper from there; the wiring steps assume it.
+![Full subtractor schematic: two half subtractors and an OR gate](diagrams/full-subtractor-schematic.svg)
 
-![ALU slice schematic: a full adder with a flippable B input, AND and OR candidates, and a two-stage select](diagrams/alu-slice-schematic.svg)
+### The truth table
 
-### The operation table
+| A | B | Bin | D | Bout |
+|---|---|-----|---|------|
+| 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 1 | 1 |
+| 0 | 1 | 0 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 1 |
+| 1 | 0 | 0 | 1 | 0 |
+| 1 | 0 | 1 | 0 | 0 |
+| 1 | 1 | 0 | 0 | 0 |
+| 1 | 1 | 1 | 1 | 1 |
 
-| OP1 | OP0 | F | Notes |
-|-----|-----|---|-------|
-| 0 | 0 | Sum | the adder's answer; Sub and Cin decide add or subtract |
-| 0 | 1 | Sum | OP0 reaches the select only when OP1 is 1 |
-| 1 | 0 | A · B | AND |
-| 1 | 1 | A + B | OR |
-
-The adder's own signals: Bx = B ⊕ Sub, Sum = A ⊕ Bx ⊕ Cin, and Cout = (A · Bx) + ((A ⊕ Bx) · Cin). With OP1 = 0 the slice adds or subtracts: Sub = 0 and Cin = 0 gives A + B; Sub = 1 and Cin = 1 gives A − B, and then Cout = 1 means no borrow while Cout = 0 means the slice borrowed.
+D is A ⊕ B ⊕ Bin: it is 1 when an odd number of the inputs are 1. Bout is 1 whenever B + Bin is more than A has to give: Bout = (¬A · B) + (¬(A ⊕ B) · Bin).
 
 ### What you need
 
-- One 7486 (quad XOR), two 7408 (quad AND), one 7432 (quad OR), and one 7404 (hex inverter)
+- One 7486 (quad XOR), one 7404 (hex inverter), one 7408 (quad AND), and one 7432 (quad OR)
 - A breadboard and jumper wires
-- Six switches for A, B, Cin, Sub, OP1, and OP0 (or jumper wires you move between the ground and +5 V rails)
-- Two LEDs: red for F, green for Cout
+- Three switches for A, B, and Bin (or jumper wires you move between the ground and +5 V rails)
+- Two LEDs: red for D, green for Bout
 - Two 330 Ω resistors, one in series with each LED
 - A 5 V supply
 
 ### The chips
 
-Four of the chips are 14-pin quad two-input gates with the usual pattern: pin 14 is +5 V, pin 7 is ground, and the gates are (pins 1, 2) → 3, (4, 5) → 6, (9, 10) → 8, and (12, 13) → 11. The 7404's inverters are single-input gates: pin 1 → 2, pin 3 → 4, and so on. This build uses sixteen gates:
+Three of the chips are 14-pin quad two-input gates with the usual pattern: pin 14 is +5 V, pin 7 is ground, and the gates are (pins 1, 2) → 3, (4, 5) → 6, (9, 10) → 8, and (12, 13) → 11. The 7404's inverters are single-input gates: pin 1 → 2, pin 3 → 4, and so on. This build uses seven gates:
 
 | Gate | Inputs | Output | Signal |
 |------|--------|--------|--------|
-| 7486 gate 1 | pins 1, 2 | pin 3 | Bx = B ⊕ Sub |
-| 7486 gate 2 | pins 4, 5 | pin 6 | s1 = A ⊕ Bx |
-| 7486 gate 3 | pins 9, 10 | pin 8 | Sum = s1 ⊕ Cin |
-| 7408 (first) gate 1 | pins 1, 2 | pin 3 | k1 = A · Bx |
-| 7408 (first) gate 2 | pins 4, 5 | pin 6 | k2 = s1 · Cin |
-| 7408 (first) gate 3 | pins 9, 10 | pin 8 | Ar = A · B |
-| 7408 (first) gate 4 | pins 12, 13 | pin 11 | m1a = Ar · ¬OP0 |
-| 7408 (second) gate 1 | pins 1, 2 | pin 3 | m1b = Or · OP0 |
-| 7408 (second) gate 2 | pins 4, 5 | pin 6 | m2a = Sum · ¬OP1 |
-| 7408 (second) gate 3 | pins 9, 10 | pin 8 | m2b = m1 · OP1 |
-| 7432 gate 1 | pins 1, 2 | pin 3 | Cout = k1 + k2 |
-| 7432 gate 2 | pins 4, 5 | pin 6 | Or = A + B |
-| 7432 gate 3 | pins 9, 10 | pin 8 | m1 = m1a + m1b |
-| 7432 gate 4 | pins 12, 13 | pin 11 | F = m2a + m2b |
-| 7404 inverter 1 | pin 1 | pin 2 | ¬OP0 |
-| 7404 inverter 2 | pin 3 | pin 4 | ¬OP1 |
+| 7486 gate 1 | pins 1, 2 | pin 3 | s1 = A ⊕ B |
+| 7486 gate 2 | pins 4, 5 | pin 6 | D = s1 ⊕ Bin |
+| 7404 inverter 1 | pin 1 | pin 2 | ¬A |
+| 7404 inverter 2 | pin 3 | pin 4 | ¬s1 |
+| 7408 gate 1 | pins 1, 2 | pin 3 | b1 = ¬A · B |
+| 7408 gate 2 | pins 4, 5 | pin 6 | b2 = ¬s1 · Bin |
+| 7432 gate 1 | pins 1, 2 | pin 3 | Bout = b1 + b2 |
 
 ### Wiring, step by step
 
-1. **Power first, but do not switch on yet.** Connect pin 14 of each of the five chips to the +5 V rail and pin 7 of each chip to the ground rail.
-2. **The B flip.** Connect switch B to pin 1 of the 7486 and switch Sub to pin 2. Bx = B ⊕ Sub leaves pin 3: with Sub = 0 it is B itself, with Sub = 1 it is B flipped.
-3. **The adder.** Connect switch A to pin 4 of the 7486 and Bx (pin 3) to pin 5; s1 = A ⊕ Bx leaves pin 6. Connect pin 6 to pin 9 of the 7486 and switch Cin to pin 10; Sum leaves pin 8.
-4. **The carry, and the Cout LED.** Connect A to pin 1 of the first 7408 and Bx to pin 2 (k1 at pin 3); connect s1 to pin 4 and Cin to pin 5 (k2 at pin 6). Connect k1 to pin 1 of the 7432 and k2 to pin 2; Cout leaves pin 3: connect pin 3 through a 330 Ω resistor to the green LED's anode, cathode to the ground rail.
-5. **The other candidates.** Connect A to pin 9 of the first 7408 and B to pin 10 (Ar = A · B at pin 8). Connect A to pin 4 of the 7432 and B to pin 5 (Or = A + B at pin 6).
-6. **The control inverters.** Connect switch OP0 to pin 1 of the 7404 (¬OP0 at pin 2) and switch OP1 to pin 3 (¬OP1 at pin 4).
-7. **The first select stage.** Connect Ar to pin 12 of the first 7408 and ¬OP0 to pin 13 (m1a at pin 11). Connect Or to pin 1 of the second 7408 and OP0 to pin 2 (m1b at pin 3). Connect m1a to pin 9 of the 7432 and m1b to pin 10; m1 leaves pin 8. With OP1 = 1, m1 is the AND candidate when OP0 = 0 and the OR candidate when OP0 = 1.
-8. **The second select stage, and the F LED.** Connect Sum to pin 4 of the second 7408 and ¬OP1 to pin 5 (m2a at pin 6). Connect m1 to pin 9 and OP1 to pin 10 (m2b at pin 8). Connect m2a to pin 12 of the 7432 and m2b to pin 13; F leaves pin 11: connect pin 11 through a 330 Ω resistor to the red LED's anode, cathode to the ground rail. With OP1 = 0, F is the adder's Sum; with OP1 = 1, F is m1.
-9. **Before you power it:** every chip has pin 14 on +5 V and pin 7 on ground; A reaches all four of its pins (7486 pin 4, first 7408 pins 1 and 9, 7432 pin 4), B reaches its three (7486 pin 1, first 7408 pin 10, 7432 pin 5), and Cin, OP0, and OP1 each reach both of theirs; no output pin is tied to a rail; each LED's anode reaches its resistor and its cathode reaches ground. As in every build here, an input left unconnected is not a 0: it drifts and reads as a 1. Then switch on.
+1. **Power first, but do not switch on yet.** Connect pin 14 of each of the four chips to the +5 V rail and pin 7 of each chip to the ground rail.
+2. **Inputs A and B, and the first difference.** Connect switch A to pin 1 of the 7486 and switch B to pin 2; s1 = A ⊕ B leaves pin 3. Connect A also to pin 1 of the 7404: ¬A leaves pin 2. As in the builds before this one, each input is a single node: join the strips it feeds and drive the joined node.
+3. **The second stage.** Connect s1 (the 7486's pin 3) to pin 4 of the 7486 and switch Bin to pin 5; D leaves pin 6: connect pin 6 through a 330 Ω resistor to the red LED's anode, cathode to the ground rail. Connect s1 also to pin 3 of the 7404: ¬s1 leaves pin 4.
+4. **The two borrows.** Connect ¬A to pin 1 of the 7408 and B to pin 2 (b1 at pin 3). Connect ¬s1 to pin 4 of the 7408 and Bin to pin 5 (b2 at pin 6).
+5. **Bout and its LED.** Connect b1 to pin 1 of the 7432 and b2 to pin 2; Bout leaves pin 3: connect pin 3 through a 330 Ω resistor to the green LED's anode, cathode to the ground rail.
+6. **Before you power it:** every chip has pin 14 on +5 V and pin 7 on ground; A reaches both of its pins (7486 pin 1, 7404 pin 1), B reaches both of its (7486 pin 2, 7408 pin 2), and Bin reaches both of its (7486 pin 5, 7408 pin 5); no output pin is tied to a rail; each LED's anode reaches its resistor and its cathode reaches ground. An input left unconnected is not a 0: it drifts, and the gates read it as a 1. Then switch on.
 
-The same circuit laid out on a breadboard, with every chip pin labelled: the breadboard diagram from [From Gates to Systems](https://ebukaoguchi.github.io/gates-to-systems/), showing A = B = 1 with Sub = 0 and OP1 OP0 = 00: the slice adds, so F is 0 and the green Cout LED is lit.
+The same circuit laid out on a breadboard, with every chip pin labelled: the breadboard diagram from [From Gates to Systems](https://ebukaoguchi.github.io/gates-to-systems/), showing A = 1, B = 0, Bin = 0: 1 − 0 − 0 = 1, so the red D LED is lit and Bout is dark.
 
-![Breadboard wiring diagram for the 1-bit ALU slice: 7486, two 7408s, a 7432, and a 7404 with labelled pins](images/alu-slice-breadboard-diagram.jpg)
+![Breadboard wiring diagram for the full subtractor: 7486, 7404, 7408, and 7432 with labelled pins](images/full-subtractor-breadboard-diagram.jpg)
 
-### Test it against the operation table
+### Test it against the truth table
 
-Set the six switches for each row and check the two LEDs. Cout reports the adder in every row, including the AND and OR rows:
+Set the three switches for each row and check the two LEDs:
 
-| A | B | Cin | Sub | OP1 | OP0 | F LED (red) | Cout LED (green) | The row |
-|---|---|-----|-----|-----|-----|-------------|------------------|---------|
-| 1 | 1 | 0 | 0 | 0 | 0 | off | on | add: 1 + 1 = 0, carry 1 |
-| 1 | 0 | 0 | 0 | 0 | 0 | on | off | add: 1 + 0 = 1 |
-| 0 | 0 | 1 | 0 | 0 | 0 | on | off | the carry-in alone: 0 + 0 + 1 = 1 |
-| 1 | 0 | 1 | 1 | 0 | 0 | on | on | subtract: 1 − 0 = 1, no borrow |
-| 0 | 1 | 1 | 1 | 0 | 0 | on | off | subtract: 0 − 1 borrows, so Cout = 0 and F = 1 |
-| 1 | 0 | 0 | 0 | 1 | 0 | off | off | AND: 1 · 0 = 0 |
-| 1 | 1 | 0 | 0 | 1 | 0 | on | on | AND: 1 · 1 = 1; Cout still reports the adder, which added 1 + 1 |
-| 1 | 0 | 0 | 0 | 1 | 1 | on | off | OR: 1 + 0 = 1 |
+| A | B | Bin | D LED (red) | Bout LED (green) |
+|---|---|-----|-------------|------------------|
+| 0 | 0 | 0 | off | off |
+| 0 | 0 | 1 | on | on |
+| 0 | 1 | 0 | on | on |
+| 0 | 1 | 1 | off | on |
+| 1 | 0 | 0 | on | off |
+| 1 | 0 | 1 | off | off |
+| 1 | 1 | 0 | off | off |
+| 1 | 1 | 1 | on | on |
 
-The photograph shows the instructor's own build of the slice: all five chips on one breadboard.
+The photograph shows the instructor's own build of the subtractor: all four chips on one breadboard.
 
-![The 1-bit ALU slice built on a breadboard from 7486, two 7408, 7432, and 7404 chips, with both LEDs lit](images/alu-slice-breadboard.jpg)
+![The full subtractor built on a breadboard from 7486, 7404, 7408, and 7432 chips, with both LEDs lit](images/full-subtractor-breadboard.jpg)
 
-The same board is interactive in [From Gates to Systems](https://ebukaoguchi.github.io/gates-to-systems/), where the six switches can be flipped and the highlighted truth-table row follows the inputs.
+The same board is interactive in [From Gates to Systems](https://ebukaoguchi.github.io/gates-to-systems/), where the switches can be flipped and the highlighted truth-table row follows the inputs.
 
 ## Staged milestones
 
