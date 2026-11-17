@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" font-family="sans-serif">
+  <rect x="0" y="0" width="1440" height="800" fill="#ffffff"/>
+  <text x="24" y="36" font-size="22" font-weight="bold" fill="#1a202c">A 1-bit ALU slice at gate level</text>
+  <text x="24" y="60" font-size="14" fill="#4a5568">The adder always runs, with B flippable for subtraction. AND and OR are computed alongside, and two select stages choose what reaches F. One 7486, two 7408s, one 7432, one 7404.</text>
+  <rect x="200" y="230" width="810" height="270" fill="#f7fafc" stroke="#a0aec0" stroke-dasharray="6 4"/>
+  <text x="216" y="256" font-size="12" letter-spacing="2" fill="#718096">THE ADDER — ALWAYS RUNNING</text>
+  <rect x="200" y="545" width="610" height="105" fill="#f7fafc" stroke="#a0aec0" stroke-dasharray="6 4"/>
+  <text x="216" y="571" font-size="12" letter-spacing="2" fill="#718096">THE OTHER CANDIDATES</text>
+  <rect x="880" y="270" width="480" height="500" fill="#f7fafc" stroke="#a0aec0" stroke-dasharray="6 4"/>
+  <text x="896" y="296" font-size="12" letter-spacing="2" fill="#718096">THE SELECT — OP1 OP0 CHOOSE WHAT REACHES F</text>
+  <g stroke="#2d3748" stroke-width="2" fill="none">
+    <path d="M70,90 H240"/>
+    <path d="M70,155 H240"/>
+    <path d="M70,275 H430 V309 H470"/>
+    <path d="M380,275 V456 H470"/>
+    <path d="M330,275 V579 H470"/>
+    <path d="M290,275 V579 H700"/>
+    <path d="M70,360 H200 V434 H240"/>
+    <path d="M160,360 V601 H470"/>
+    <path d="M130,360 V601 H700"/>
+    <path d="M70,445 H640 V331 H700"/>
+    <path d="M640,445 V456 H700"/>
+    <path d="M70,530 H215 V456 H240"/>
+    <path d="M306,445 H420 V331 H470"/>
+    <path d="M420,445 V434 H470"/>
+    <path d="M536,320 H660 V309 H700"/>
+    <path d="M600,320 V434 H700"/>
+    <path d="M522,445 H900 V434 H930"/>
+    <path d="M752,445 H910 V456 H930"/>
+    <path d="M996,445 H1240"/>
+    <path d="M522,590 H890 V629 H930"/>
+    <path d="M766,590 H895 V709 H930"/>
+    <path d="M280,155 H860 V651 H930"/>
+    <path d="M120,155 V731 H930"/>
+    <path d="M982,640 H1060 V669 H1090"/>
+    <path d="M982,720 H1070 V691 H1090"/>
+    <path d="M766,320 H1050 V309 H1090"/>
+    <path d="M280,90 H1030 V331 H1090"/>
+    <path d="M1156,680 H1210 V549 H1250"/>
+    <path d="M150,90 V571 H1250"/>
+    <path d="M1142,320 H1215 V309 H1250"/>
+    <path d="M1302,560 H1340 V331 H1250"/>
+    <path d="M1316,320 H1380"/>
+    <circle cx="420" cy="445" r="4" fill="#2d3748" stroke="none"/>
+    <circle cx="380" cy="275" r="4" fill="#2d3748" stroke="none"/>
+    <circle cx="330" cy="275" r="4" fill="#2d3748" stroke="none"/>
+    <circle cx="290" cy="275" r="4" fill="#2d3748" stroke="none"/>
+    <circle cx="160" cy="360" r="4" fill="#2d3748" stroke="none"/>
+    <circle cx="130" cy="360" r="4" fill="#2d3748" stroke="none"/>
+    <circle cx="640" cy="445" r="4" fill="#2d3748" stroke="none"/>
+    <circle cx="600" cy="320" r="4" fill="#2d3748" stroke="none"/>
+    <circle cx="150" cy="90" r="4" fill="#2d3748" stroke="none"/>
+    <circle cx="120" cy="155" r="4" fill="#2d3748" stroke="none"/>
+  </g>
+  <g fill="#ebf4ff" stroke="#2d3748" stroke-width="2">
+    <path d="M240,423 Q254,445 240,467 Q270,463 306,445 Q270,427 240,423 Z"/><path d="M232,423 Q246,445 232,467" fill="none"/>
+    <path d="M470,298 Q484,320 470,342 Q500,338 536,320 Q500,302 470,298 Z"/><path d="M462,298 Q476,320 462,342" fill="none"/>
+    <path d="M470,423 L500,423 A22,22 0 0 1 500,467 L470,467 Z"/>
+    <path d="M700,298 Q714,320 700,342 Q730,338 766,320 Q730,302 700,298 Z"/><path d="M692,298 Q706,320 692,342" fill="none"/>
+    <path d="M700,423 L730,423 A22,22 0 0 1 730,467 L700,467 Z"/>
+    <path d="M930,423 Q944,445 930,467 Q960,463 996,445 Q960,427 930,423 Z"/>
+    <path d="M470,568 L500,568 A22,22 0 0 1 500,612 L470,612 Z"/>
+    <path d="M700,568 Q714,590 700,612 Q730,608 766,590 Q730,572 700,568 Z"/>
+    <path d="M240,144 L270,155 240,166 Z"/><circle cx="275" cy="155" r="5" fill="#ebf4ff"/>
+    <path d="M240,79 L270,90 240,101 Z"/><circle cx="275" cy="90" r="5" fill="#ebf4ff"/>
+    <path d="M930,618 L960,618 A22,22 0 0 1 960,662 L930,662 Z"/>
+    <path d="M930,698 L960,698 A22,22 0 0 1 960,742 L930,742 Z"/>
+    <path d="M1090,658 Q1104,680 1090,702 Q1120,698 1156,680 Q1120,662 1090,658 Z"/>
+    <path d="M1090,298 L1120,298 A22,22 0 0 1 1120,342 L1090,342 Z"/>
+    <path d="M1250,538 L1280,538 A22,22 0 0 1 1280,582 L1250,582 Z"/>
+    <path d="M1250,298 Q1264,320 1250,342 Q1280,338 1316,320 Q1280,302 1250,298 Z"/>
+  </g>
+  <g font-size="16" font-weight="bold" fill="#1a202c">
+    <text x="30" y="96">OP1</text>
+    <text x="30" y="161">OP0</text>
+    <text x="30" y="281">A</text>
+    <text x="30" y="366">B</text>
+    <text x="30" y="451">Cin</text>
+    <text x="30" y="536">Sub</text>
+    <text x="1250" y="451">Cout</text>
+    <text x="1390" y="326">F</text>
+  </g>
+  <g font-size="12" fill="#4a5568" text-anchor="middle">
+    <text x="273" y="483">XOR</text>
+    <text x="503" y="358">XOR</text>
+    <text x="496" y="483">AND</text>
+    <text x="733" y="358">XOR</text>
+    <text x="726" y="483">AND</text>
+    <text x="963" y="483">OR</text>
+    <text x="496" y="628">AND</text>
+    <text x="733" y="628">OR</text>
+    <text x="255" y="193">NOT</text>
+    <text x="255" y="128">NOT</text>
+    <text x="956" y="678">AND</text>
+    <text x="956" y="758">AND</text>
+    <text x="1123" y="718">OR</text>
+    <text x="1116" y="358">AND</text>
+    <text x="1276" y="598">AND</text>
+    <text x="1283" y="358">OR</text>
+  </g>
+  <g font-size="12" fill="#4a5568">
+    <text x="330" y="435">Bx = B ⊕ Sub</text>
+    <text x="560" y="310">s1 = A ⊕ Bx</text>
+    <text x="790" y="310">Sum</text>
+    <text x="545" y="580">Ar = A · B</text>
+    <text x="790" y="580">Or = A + B</text>
+    <text x="300" y="145">¬OP0</text>
+    <text x="300" y="80">¬OP1</text>
+    <text x="1005" y="630">m1a</text>
+    <text x="1005" y="710">m1b</text>
+    <text x="1180" y="670">m1</text>
+    <text x="1165" y="310">m2a</text>
+    <text x="1325" y="550">m2b</text>
+  </g>
+</svg>
