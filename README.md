@@ -6,7 +6,7 @@ These modules come from a single conviction: students learn systems by following
 
 ## The modules
 
-Modules 5–8 are the arithmetic datapath group: four breadboard builds that climb from a half adder to a full subtractor. Their shared introduction — the lecture module *Inside the ALU*, with its worksheet, C and MIPS arithmetic algorithms, and the multiplier and divider designs the builds lead into — lives in [module-arithmetic-datapath](module-arithmetic-datapath/).
+Modules 5–9 are the arithmetic datapath group. It opens with the lecture module *Inside the ALU* (module 5): its worksheet, C and MIPS arithmetic algorithms, and the multiplier and divider designs. Four breadboard builds follow (modules 6–9), climbing from a half adder to a full subtractor.
 
 | # | Module | Pathway stage | Course | Status |
 |---|--------|---------------|--------|--------|
@@ -14,19 +14,20 @@ Modules 5–8 are the arithmetic datapath group: four breadboard builds that cli
 | 2 | [First Contact with the Machine — MIPS Assembly and Machine Code in QtSpim](module-qtspim-intro/) | 03 · ISA | SCIS 216 Computer Organization & Design, Lab 1 | Taught, Spring & Fall 2026 |
 | 3 | [Logic Gates on a Breadboard — NOT, AND, OR with 74-Series ICs](module-logic-gates-breadboard/) | 04 · Datapath | SCIS 216, Lab 6 | Taught, Spring 2026 |
 | 4 | [Build a MIPS Assembler — From Assembly to Machine Code](module-capstone-mips-assembler/) | 03 · ISA, in reverse | SCIS 216 capstone | Designed — first run end of Fall 2026 |
-| 5 | [The Half Adder — One XOR, One AND, and the First Column of Addition](module-half-adder/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Built and taught Fall 2026 as part of Inside the ALU; packaged as its own module |
-| 6 | [The Full Adder — Two Half Adders, One Carry Chain](module-full-adder/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Built and taught Fall 2026 as part of Inside the ALU; packaged as its own module |
-| 7 | [The Half Subtractor — Difference and Borrow](module-half-subtractor/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Built and taught Fall 2026 as part of Inside the ALU; packaged as its own module |
-| 8 | [The Full Subtractor — Subtraction with a Borrow-In](module-full-subtractor/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Built and taught Fall 2026 as part of Inside the ALU; packaged as its own module |
-| 9 | [Putting It All Together — The Student Grade Calculator](module-cpp-student-grade-calculator/) | 01 · Source code | SCIS 123 C++ Programming, Lab 6 | Taught, Fall 2026 |
-| 10 | [Making Decisions — Conditional Branching and Control Flow in MIPS](module-branching-control-flow/) | 03 · ISA | SCIS 216 Computer Organization & Design, Lab 6 | Taught, Fall 2026 |
-| 11 | [Who Calls Whom — Leaf and Non-Leaf Procedures and the Stack](module-procedures-stack/) | 03 · ISA | SCIS 216, Lab 4 | Taught, Fall 2026 |
-| 12 | [When Registers Run Out — Register Spilling in MIPS](module-register-spilling/) | 03 · ISA | SCIS 216, Lab 5 | Taught, Fall 2026 |
-| 13 | [Numbers with Points — Floating Point Representation and Arithmetic](module-floating-point/) | 03 · ISA | SCIS 216, companion to Inside the ALU | Lecture material taught Fall 2026; packaged as a module |
-| 14 | [Find the Bugs — Debugging and Reading Code in C++](module-cpp-debugging/) | 01 · Source code | SCIS 123 C++ Programming, Lab 3 | Taught, Fall 2026 |
-| 15 | [One Value, Four Bases — Number Systems in C++](module-cpp-number-systems/) | 01 · Source code | SCIS 123 C++ Programming, Lab 4 | Taught, Fall 2026 |
-| 16 | [Many Small Jobs, One Menu — User-Defined Functions in C++](module-cpp-functions/) | 01 · Source code | SCIS 123 C++ Programming, Lab 9 | Taught, Fall 2026 |
-| 17 | [Store the Grid — Arrays and Nested Loops in C++](module-cpp-arrays/) | 01 · Source code | SCIS 123 C++ Programming, Lab 10 | Taught, Fall 2026 |
+| 5 | [Inside the ALU — Adders, Multipliers, and Dividers](module-arithmetic-datapath/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Lectures and in-class activities taught Fall 2026; packaged as a module |
+| 6 | [The Half Adder — One XOR, One AND, and the First Column of Addition](module-half-adder/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Built and taught Fall 2026 as part of Inside the ALU; packaged as its own module |
+| 7 | [The Full Adder — Two Half Adders, One Carry Chain](module-full-adder/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Built and taught Fall 2026 as part of Inside the ALU; packaged as its own module |
+| 8 | [The Half Subtractor — Difference and Borrow](module-half-subtractor/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Built and taught Fall 2026 as part of Inside the ALU; packaged as its own module |
+| 9 | [The Full Subtractor — Subtraction with a Borrow-In](module-full-subtractor/) | 04 · Datapath | SCIS 216 Computer Organization & Design | Built and taught Fall 2026 as part of Inside the ALU; packaged as its own module |
+| 10 | [Putting It All Together — The Student Grade Calculator](module-cpp-student-grade-calculator/) | 01 · Source code | SCIS 123 C++ Programming, Lab 6 | Taught, Fall 2026 |
+| 11 | [Making Decisions — Conditional Branching and Control Flow in MIPS](module-branching-control-flow/) | 03 · ISA | SCIS 216 Computer Organization & Design, Lab 6 | Taught, Fall 2026 |
+| 12 | [Who Calls Whom — Leaf and Non-Leaf Procedures and the Stack](module-procedures-stack/) | 03 · ISA | SCIS 216, Lab 4 | Taught, Fall 2026 |
+| 13 | [When Registers Run Out — Register Spilling in MIPS](module-register-spilling/) | 03 · ISA | SCIS 216, Lab 5 | Taught, Fall 2026 |
+| 14 | [Numbers with Points — Floating Point Representation and Arithmetic](module-floating-point/) | 03 · ISA | SCIS 216, companion to Inside the ALU | Lecture material taught Fall 2026; packaged as a module |
+| 15 | [Find the Bugs — Debugging and Reading Code in C++](module-cpp-debugging/) | 01 · Source code | SCIS 123 C++ Programming, Lab 3 | Taught, Fall 2026 |
+| 16 | [One Value, Four Bases — Number Systems in C++](module-cpp-number-systems/) | 01 · Source code | SCIS 123 C++ Programming, Lab 4 | Taught, Fall 2026 |
+| 17 | [Many Small Jobs, One Menu — User-Defined Functions in C++](module-cpp-functions/) | 01 · Source code | SCIS 123 C++ Programming, Lab 9 | Taught, Fall 2026 |
+| 18 | [Store the Grid — Arrays and Nested Loops in C++](module-cpp-arrays/) | 01 · Source code | SCIS 123 C++ Programming, Lab 10 | Taught, Fall 2026 |
 
 More modules are in preparation, including the remaining SCIS 123 sequence.
 
