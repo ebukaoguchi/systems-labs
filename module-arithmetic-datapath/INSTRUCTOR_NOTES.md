@@ -7,7 +7,7 @@
 
 This module is the bridge between two existing Systems Labs modules. *Logic Gates on a Breadboard* ends with individual gates; the MIPS modules begin with instructions such as `add`, `mult`, and `div` treated as given. This module opens the box between them: gates become an adder, the adder becomes the ALU's engine, and repeated add/shift and subtract/shift loops become multiplication and division.
 
-Run it after the QtSpim Intro module (students need `andi`, `add`, `sll`, `srl`, and the register conventions) and after or alongside the breadboard lab (students need AND, OR, NOT, and the idea of a truth table).
+Run it after the QtSpim Intro module (students need `andi`, `add`, `sll`, `srl`, and the register conventions) and after or alongside the breadboard lab (students need AND, OR, NOT, and the idea of a truth table). The four breadboard builds are separate modules in this group: the half adder, the full adder, the half subtractor, and the full subtractor.
 
 ## Suggested pacing
 
@@ -39,7 +39,7 @@ Part 1 asks students to reason about a full adder, whose sum bit is A ⊕ B ⊕ 
 1. Keep Part 1 as diagram labelling plus a simulator build (any free logic simulator) — this is how the module ships.
 2. If a physical build is wanted, add one 7486 (quad XOR) per bench to the parts list; a half adder needs one XOR and one AND, a full adder two XORs, two ANDs, and one OR, all available once the 7486 is added.
 
-The instructor's own build now exists and is photographed in the module README, alongside the gate-level schematic and the truth table: one 7486, one 7408, and one 7432, with sum and carry-out on LEDs. It is a demonstration reference; it does not change the student requirement.
+The instructor's own builds now exist as their own modules — [the Half Adder](../module-half-adder/) and [the Full Adder](../module-full-adder/) — each with its gate-level schematic, truth table, and photographs: one 7486, one 7408, and one 7432, with sum and carry-out on LEDs. It is a demonstration reference; it does not change the student requirement.
 
 Do not promise the physical build in the student worksheet until the parts are actually in the room.
 

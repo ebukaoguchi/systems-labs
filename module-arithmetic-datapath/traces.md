@@ -32,7 +32,7 @@ Questions:
 
 ## Part 1: From logic gates to an adder
 
-Use the module diagram `diagrams/adder.svg`. The gate-level schematic of one full adder, its truth table, and a photograph of the instructor's breadboard build are in the module README (schematic: `diagrams/full-adder-schematic.svg`).
+Use the module diagram `diagrams/adder.svg`. The gate-level schematic of one full adder, its truth table, and a photograph of the instructor's breadboard build are in the [Full Adder module](../module-full-adder/) (schematic: `../module-full-adder/diagrams/full-adder-schematic.svg`).
 
 1. Label the two input bits, the sum output, the carry-in, and the carry-out of one full-adder block.
 2. In a 4-bit adder built from four full adders, where does the carry-out of bit 0 go? Where does the carry-out of bit 3 go, and what can it tell you?
