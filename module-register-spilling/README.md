@@ -4,7 +4,7 @@
 **Course:** SCIS 216 Computer Organization and Design — Lab 5 (Fall 2026)
 **Format:** One lab session · **Level:** Assembly programming, after procedures and the stack
 
-## Why this lab exists
+## Why this module exists
 
 Registers are the fastest storage in the machine, and there are only 32 of them. When a computation has more live values than registers can hold, something has to give: a value is *spilled*, written to the stack, its register reused, and the value reloaded when it is needed again. Compilers do this constantly and invisibly; this lab makes students do it by hand, once, in a function small enough to hold in their heads. It also draws the distinction students most often blur: saving `$ra` in a non-leaf procedure and spilling a value look like the same three instructions, but they happen for entirely different reasons.
 
@@ -55,8 +55,8 @@ Students submit:
 
 ## Source files
 
-`Lab_5_Register_Spilling.pptx`, the full slide deck used in class, and the two worked-example programs accompany this module in the repository.
+`Lab_5_Register_Spilling.pptx` / `.pdf`, the full slide deck used in class, and the two worked-example programs accompany this module in the repository.
 
 ---
 
-*Part of the Systems Labs collection — laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*
+*Part of the Systems Labs collection: laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*

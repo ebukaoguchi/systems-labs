@@ -4,7 +4,7 @@
 **Course:** SCIS 123 C++ Programming — Lab 9 (Fall 2026)
 **Format:** One lab session · **Level:** Introductory programming, after branching and loops; first user-defined functions
 
-## Why this lab exists
+## Why this module exists
 
 Every program in this course so far has lived in one `main()`. That works until the program has to do the same job twice, or five jobs in rotation — and then `main()` becomes a scroll. This lab introduces the user-defined function as the way out: name a job, give it its own block, call it when needed. The vehicle is a menu-driven calculator, chosen because a menu is a program that is *nothing but* repeated, separable jobs: show the menu, do one operation, show the menu again. Each operation becomes a `void` function of its own, `main()` shrinks to a loop and a `switch`, and the structure of the code starts to look like the structure of the problem.
 
@@ -67,6 +67,12 @@ Students submit:
 - The completed menu-driven calculator, structured as specified: prototypes, `showMenu()`, one `void` function per operation, a `do-while` loop, and a `switch`.
 - The menu-driven grade calculator from the in-class exercise, with value-returning functions for the three calculations.
 
-## A note on the deck
+## Source files
 
 The accompanying deck is the Lab 9 deck published whole, all 21 slides, as taught, including the complete calculator program it builds toward. It is the instructor's final revised version: two slides added after the calculator's sample runs present the decimal-input infinite loop of Milestone 9 and its two solutions (double operands; validated input), and a closing appendix, "Additional C++ Code Examples", carries the file-handling calculator, its if/else form, and the value-returning form in full — so every program in this module's later milestones now stands in the deck itself as well. The deck's requirements slide shows the input prompt as "Enter your choice:" while the code it builds prompts "Enter choice: " — a wording mismatch documented in the instructor notes; the code, and the shipped program, are authoritative. The exercise's menu-driven grade calculator appears in the deck as a specification with an example run, and is published here the same way. The Milestone 8 extension and its variants were supplied by the instructor as follow-on material after the deck's main sequence; the instructor subsequently folded all three programs into the deck's closing appendix, where they now appear as complete listings.
+
+Files: `Lab_9_Functions_and_Menu_Driven_Programs.pptx` / `.pdf` (the deck as taught) and `INSTRUCTOR_NOTES.md` (pacing and teaching notes) accompany this module.
+
+---
+
+*Part of the Systems Labs collection: laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*

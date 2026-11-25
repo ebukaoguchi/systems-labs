@@ -4,13 +4,13 @@
 **Course:** SCIS 123 C++ Programming — Lab 10 (Fall 2026)
 **Format:** One lab session · **Level:** Introductory programming, after nested loops and user-defined functions; first arrays
 
-## Why this lab exists
+## Why this module exists
 
 Earlier in this course, nested loops printed grids: rows of numbers, generated on the fly and gone the moment they scrolled past. This lab asks the question that turns printing into programming: what if the numbers have to *stay*? The answer is the array, the first data structure in the course: a named block of elements of one type, each reachable by an index. The lab moves from a one-dimensional array (declare it, read an element, walk it with a loop) to the two-dimensional array that stores the grid the loops used to print, and then does real work on stored data: adding two matrices element by element, and searching a grid for duplicate values. A three-dimensional array closes the session, presented as what it is: the same idea with one more index, and one more loop to traverse it.
 
 The duplicates exercise is the lab's centre of gravity. It is the first task in the course whose solution is an algorithm the student has to design rather than a pattern to transcribe: three nested loops, a comparison that must start *after* the current element, and an output convention (rows numbered from 1) that deliberately disagrees with the language's indexing (from 0). The deck designs it in the open, pseudocode first, before any code is written.
 
-## The files in this module
+## The module files
 
 | File | What it is |
 |---|---|
@@ -112,7 +112,7 @@ Students submit:
 
 The package contains the module specification, the instructor's lab deck, and four small programs, each the complete compilable form of code presented in the deck, compiled and run before publication so that every output shown above is reproduced exactly. The in-class exercise is published as a specification with expected output only; its solution is not published, so the exercise remains gradeable as evidence of process.
 
-## Source material
+## Source files
 
 Packaged from the Fall 2026 SCIS 123 Lab 10 session, accompanying Gaddis, *Starting Out with C++: From Control Structures through Objects*, chapter 7 (arrays and vectors). The deck is the instructor's own; no publisher slide content is included.
 

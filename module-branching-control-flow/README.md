@@ -4,7 +4,7 @@
 **Course:** SCIS 216 Computer Organization and Design — Lab 6 (Fall 2026)
 **Format:** One lab session · **Level:** Early assembly programming
 
-## Why this lab exists
+## Why this module exists
 
 Until this lab, student programs run straight downhill: every instruction executes, in order, exactly once. Real programs decide and repeat. This lab installs the machinery of decision in MIPS: comparisons with `slt`, conditional branches with `beq` and `bne`, the unconditional `j`, and labels as targets. Its discipline is translation: each exercise starts as a short C-style program with a register mapping, and the student's job is to lower it, faithfully, into assembly whose control flow has the same shape as the source.
 
@@ -46,8 +46,8 @@ Students submit:
 
 ## Source files
 
-`Lab_6_Conditional_Branching_and_Control_Flow.pptx`, the full slide deck used in class, and the two worked-example programs accompany this module in the repository.
+`Lab_6_Conditional_Branching_and_Control_Flow.pptx` / `.pdf`, the full slide deck used in class, and the two worked-example programs accompany this module in the repository.
 
 ---
 
-*Part of the Systems Labs collection — laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*
+*Part of the Systems Labs collection: laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*

@@ -4,7 +4,7 @@
 **Course:** SCIS 123 C++ Programming — Lab 8 (Fall 2026)
 **Format:** One lab session · **Level:** Introductory programming, second half of the course
 
-## Why this lab exists
+## Why this module exists
 
 Until this lab, every program a student has written forgets everything when it exits: input comes from the keyboard, output dies on the screen. This lab breaks that wall. Students process grouped data with nested loops, write the results to a file with `ofstream`, then read the file back with `ifstream` and display it — a complete write → persist → read pipeline in a single session, built around one worked example and transferred twice to new problems.
 
@@ -55,8 +55,8 @@ Students submit:
 
 ## Source files
 
-`Lab_8_Nested_Loops_Files.pptx` — the full slide deck used in class — and `weeklySalesReport.cpp`, the worked-example implementation, accompany this module in the repository.
+`Lab_8_Nested_Loops_Files.pptx` / `.pdf`, the full slide deck used in class, and `weeklySalesReport.cpp`, the worked-example implementation, accompany this module in the repository.
 
 ---
 
-*Part of the Systems Labs collection — laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*
+*Part of the Systems Labs collection: laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*

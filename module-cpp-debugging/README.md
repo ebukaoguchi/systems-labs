@@ -4,7 +4,7 @@
 **Course:** SCIS 123 C++ Programming — Lab 3 (Fall 2026)
 **Format:** One lab session · **Level:** Introductory programming, after basic input/output, variables, arithmetic, and selection
 
-## Why this lab exists
+## Why this module exists
 
 Students meet debugging as an accident in most courses: something breaks, and they fix it by staring. This lab teaches it as a discipline instead. Three short programs are presented broken, on purpose, and the class works them in a fixed order: find every error, classify it, correct it, and state what the program should print. The distinction the lab is really about is the one beginners blur: **syntax errors**, which the compiler catches, versus **logic errors**, which the compiler passes in silence and only the output exposes. Two of the errors in this lab are logic errors, and both live in the first program.
 
@@ -148,6 +148,12 @@ Students submit:
 - A corrected version of faulty program 1, with a written list of every error found, its classification (syntax or logic), and the output the corrected program produces for scores of their choosing.
 - The same for one of faulty programs 2 or 3, assigned in class.
 
-## A note on the deck
+## Source files
 
 The accompanying deck is the Lab 3 (*Debugging and Exam Review*) deck with two removals: the exam-expectations slide, which is course-internal framing, and the closing sequence on `scanf`/`printf`, headers, and the `switch` statement, which belongs to the later selection-statements material in this course and will travel with that module when it is published. What remains is the debugging sequence exactly as taught.
+
+Files: `Lab_3_Debugging_and_Exam_Review.pptx` / `.pdf` (the deck as taught) and `INSTRUCTOR_NOTES.md` (pacing and teaching notes) accompany this module.
+
+---
+
+*Part of the Systems Labs collection: laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*

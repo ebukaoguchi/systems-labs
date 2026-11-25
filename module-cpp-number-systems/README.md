@@ -4,7 +4,7 @@
 **Course:** SCIS 123 C++ Programming — Lab 4 (Fall 2026)
 **Format:** One lab session · **Level:** Introductory programming, after variables, input/output, and arithmetic; first contact with `switch`
 
-## Why this lab exists
+## Why this module exists
 
 Number systems are usually taught as paper exercises: convert this, convert that, hand it in. This lab makes the student build the converter instead. The program reads a value in any of the four bases a programmer actually meets — binary, octal, decimal, hexadecimal — and prints the same value in all four, which turns the equivalence table (255 = 11111111 = 377 = FF) from a fact to memorise into a thing the student's own code produces.
 
@@ -71,6 +71,12 @@ Students submit:
 - The converter program, handling all four input bases and rejecting an invalid menu choice.
 - The three-integers exercise program, with the sum displayed in a base chosen at run time.
 
-## A note on the deck
+## Source files
 
 The accompanying deck is the Lab 4 deck published whole, all 15 slides, as taught. It includes the worked solution to the in-class exercise, as the course's Lab 6 deck in this repository also carries its worked implementation; instructors who want the exercise to run as assessment should lift the solution slides (the final three) out of their own copy. The deck's one internal inconsistency — the exercise's example output lists the sum before the average, while the solution program prints the average first — is documented in the instructor notes; the program is authoritative.
+
+Files: `Lab_4_Number_Systems.pptx` / `.pdf` (the deck as taught) and `INSTRUCTOR_NOTES.md` (pacing and teaching notes) accompany this module.
+
+---
+
+*Part of the Systems Labs collection: laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*

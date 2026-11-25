@@ -4,7 +4,7 @@
 **Course:** SCIS 123 C++ Programming — Lab 6 (Fall 2026)
 **Format:** One lab session · **Level:** Introductory programming, review of Chapters 1–4
 
-## Why this lab exists
+## Why this module exists
 
 Every lab before this one taught a single idea: input, arithmetic, a condition, a function. This lab is the first time students assemble all of them into one complete, organised program. The Student Grade Calculator is deliberately ordinary — names, scores, a weighted average, a letter grade — because the lesson is not the problem, it is the *decomposition*: a large program broken into small functions, each with one job, connected in `main()`. Students who finish this lab have the template every later program in the course will follow.
 
@@ -70,8 +70,8 @@ Students submit:
 
 ## Source files
 
-`Lab_6_Putting_It_All_Together.pptx` — the full slide deck used in class — and `studentGradeCalculator.cpp`, the worked-example implementation, accompany this module in the repository.
+`Lab_6_Putting_It_All_Together.pptx` / `.pdf`, the full slide deck used in class, and `studentGradeCalculator.cpp`, the worked-example implementation, accompany this module in the repository.
 
 ---
 
-*Part of the Systems Labs collection — laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*
+*Part of the Systems Labs collection: laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*

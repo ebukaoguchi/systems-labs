@@ -4,7 +4,7 @@
 **Course:** SCIS 216 Computer Organization and Design — Lab 1 · **Semester placement:** Week 6, opening the MIPS unit
 **Format:** One lab session · **Level:** First assembly-language lab
 
-## Why this lab exists
+## Why this module exists
 
 Most first assembly labs stop at "run the program and watch the registers change." This one refuses to. Students run their first MIPS program in QtSpim — and then take it apart: they find the program counter, read the 32-bit machine code sitting at each address, and decode one instruction back into assembly by hand, field by field. The point is planted on day one and harvested all semester: *the bits are the program*, and assembly is just the human-readable spelling of them. This module is also the deliberate seed of the course capstone, in which students automate exactly this translation by writing an assembler.
 
@@ -71,10 +71,10 @@ For an assigned program, students identify and submit:
 - The HI/LO registers look pointless in Week 6; tell students to remember them — they return when multiplication and division hardware arrives (Weeks 10–11).
 - Milestone 5 is not enrichment; it is the foundation of the end-of-semester assembler capstone. Students who decode fluently here write encoders there almost without noticing the direction reversed.
 
-## Source deck
+## Source files
 
-`Lab_1_QtSpim.pptx` — the full slide deck used in class accompanies this module in the repository.
+`Lab_1_QtSpim.pptx` / `.pdf`: the full slide deck used in class accompanies this module in the repository.
 
 ---
 
-*Part of the Systems Labs collection — laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*
+*Part of the Systems Labs collection: laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*

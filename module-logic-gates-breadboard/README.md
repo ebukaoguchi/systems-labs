@@ -4,7 +4,7 @@
 **Course:** SCIS 216 Computer Organization and Design — Lab 6 (Spring 2026)
 **Format:** One 2–3 hour in-person lab session · **Level:** Introductory systems
 
-## Why this lab exists
+## Why this module exists
 
 Students meet AND, OR, and NOT first as MIPS instructions (`and`, `or`, `nor`) — symbols on a screen. This lab makes the same operations physical: real 74-series logic ICs on a breadboard, inputs they toggle by hand, and an LED that answers. By the end, the truth table is not something they memorised; it is something they watched happen. The closing discussion maps each hardware gate back to its MIPS instruction, closing the loop between the datapath and the ISA.
 
@@ -68,10 +68,10 @@ Instructor-built sample circuits for this lab — an MB102 supply module powerin
 - The single most frequent wiring error is power: an unpowered or mis-railed IC produces "mystery" outputs that students misread as gate behaviour. The Milestone 2 checkpoint exists for this reason.
 - The NOT gate's inverted LED behaviour (on when input is LOW) reliably produces the session's best discussion — let students predict before they toggle.
 
-## Source deck
+## Source files
 
-`Lab_6_Spring2026.pptx` — the full slide deck used in class accompanies this module in the repository.
+`Lab_6_Breadboard_Spring2026.pptx` / `.pdf` — the full slide deck used in class accompanies this module in the repository.
 
 ---
 
-*Part of the Systems Labs collection — laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*
+*Part of the Systems Labs collection: laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*

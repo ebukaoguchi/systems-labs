@@ -4,7 +4,7 @@
 **Course:** SCIS 216 Computer Organization and Design — Lab 4 (Fall 2026)
 **Format:** One lab session · **Level:** Early assembly programming, first procedures
 
-## Why this lab exists
+## Why this module exists
 
 This is the lab where functions stop being a C++ idea and become a machine discipline. A procedure that calls nothing is a *leaf*: it may return with a bare `jr $ra`. A procedure that calls another procedure is *non-leaf*, and it has a problem: `jal` writes the return address into the same `$ra` it needs for its own return. The stack is the answer, and this lab teaches the stack as the mechanism that makes nested calls survivable: allocate, save `$ra`, call, restore, deallocate, return. The anchor example is a C++ `divmod` function (quotient and remainder of 17 ÷ 5) that students watch turn from leaf to non-leaf the moment it calls a helper.
 
@@ -54,8 +54,8 @@ Students submit:
 
 ## Source files
 
-`Lab_4_Leaf_NonLeaf_and_the_Stack.pptx`, the full slide deck used in class, and the two worked-example programs accompany this module in the repository.
+`Lab_4_Leaf_NonLeaf_and_the_Stack.pptx` / `.pdf`, the full slide deck used in class, and the two worked-example programs accompany this module in the repository.
 
 ---
 
-*Part of the Systems Labs collection — laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*
+*Part of the Systems Labs collection: laboratory modules for computer organization, architecture, and operating systems, maintained by Ebuka Philip Oguchi, Spelman College. Modules may be adopted and remixed with attribution.*
